@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">2nd class_2</string>
+    <string name="big_menu">Menu</string>
+    <string name="menu_top">Menu - 맥도날드</string>
+    <string name="introduce_menu">맥도날드의 다양한 메뉴를 소개합니다.</string>
+    <string name="menu1">01. 버거</string>
+    <string name="menu2">02. 맥런치</string>
+    <string name="more_info">자세히보기</string>
+    <string name="menu1_explanation">빅맥에서 맥스파이시 상하이 버거까지,\n주문 즉시 바로 조리해 더욱 맛있는,\n맥도날드의 다양한 버거를 소개합니다.</string>
+    <string name="menu2_explanation">오전 10시 30분부터 오후 2시까지\n점심만의 특별한 할인으로 맥런치 세트를 즐겨보세요!</string>
+</resources>

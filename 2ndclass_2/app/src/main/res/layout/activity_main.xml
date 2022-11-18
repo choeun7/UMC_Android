@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weightSum="4"
+    tools:context=".MainActivity"
+    >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fir_constraint"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_weight="0.5"
+        android:padding="5dp">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/transparent"
+            android:text="@string/menu_top"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_weight="2"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="@color/black"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:id="@+id/sec_constraint"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_weight="1.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fir_constraint">
+        <TextView
+            android:id="@+id/big_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:text="@string/big_menu"
+            android:textColor="@color/black"
+            android:textSize="50dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/inro_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:text="@string/introduce_menu"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/big_menu"
+            app:layout_constraintTop_toBottomOf="@+id/big_menu" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/thi_constraint"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="200dp"
+        android:background="@color/white"
+        app:layout_constraintHorizontal_weight="2"
+        app:layout_constraintTop_toBottomOf="@+id/sec_constraint">
+
+        <ImageView
+            android:id="@+id/menu1_image"
+            android:layout_width="136dp"
+            android:layout_height="81dp"
+            android:paddingTop="15dp"
+            android:src="@drawable/burger"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="11dp"
+            android:text="@string/menu1"
+            android:textSize="15dp"
+            android:textStyle="bold"
+
+            app:layout_constraintStart_toEndOf="@id/menu1_image"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="130dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="130dp"
+            android:background="@drawable/button_radius"
+            android:text="@string/more_info"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView" />
+        <TextView
+            android:id="@+id/burger_explanation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLength="100"
+            android:layout_marginStart="15dp"
+            android:text="@string/menu1_explanation"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/menu1_image" />
+        <ImageView
+            android:id="@+id/menu2_image"
+            android:layout_width="136dp"
+            android:layout_height="81dp"
+            android:layout_marginTop="40dp"
+            android:paddingLeft="0dp"
+            android:paddingTop="15dp"
+            android:src="@drawable/mac_lunch"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/burger_explanation" />
+        <TextView
+            android:id="@+id/menu2_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="151dp"
+            android:text="@string/menu2"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/textView"
+            app:layout_constraintTop_toTopOf="@+id/menu2_image" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="130dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/button_radius"
+            android:text="@string/more_info"
+            app:layout_constraintStart_toStartOf="@id/button1"
+            app:layout_constraintTop_toBottomOf="@+id/menu2_name"/>
+
+        <TextView
+            android:id="@+id/mclunch_explanation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:text="@string/menu2_explanation"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/menu2_image" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:weightSum="5"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:id="@+id/home_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageButton
+                android:id="@+id/home_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:src="@drawable/ic_baseline_home_24"/>
+            <TextView
+                android:id="@+id/home_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="home"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/coupon_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageButton
+                android:id="@+id/coupon_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:src="@drawable/ic_baseline_fastfood_24"/>
+            <TextView
+                android:id="@+id/coupon_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="coupon"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/menu_layout2"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageButton
+                android:id="@+id/menu_btn2"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:src="@drawable/ic_baseline_restaurant_menu_24"/>
+            <TextView
+                android:id="@+id/menu_text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="menu"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/menu_layout3"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageButton
+                android:id="@+id/menu_btn3"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:background="@color/white"
+                android:layout_weight="1"
+                android:src="@drawable/ic_baseline_restaurant_menu_24"/>
+            <TextView
+                android:id="@+id/menu_text3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="menu"
+                />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
