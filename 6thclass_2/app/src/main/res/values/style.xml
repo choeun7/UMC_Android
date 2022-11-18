@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="tabTextStyle" parent="TextAppearance.Design.CollapsingToolbar.Expanded">
+        <item name="android:textSize">18dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/square_neo</item>
+    </style>
+
+</resources>
