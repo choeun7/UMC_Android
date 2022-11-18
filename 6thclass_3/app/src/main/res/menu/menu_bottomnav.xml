@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_play"
+        android:title="홈"
+        android:icon="@drawable/play"/>
+    <item
+        android:id="@+id/menu_radio"
+        android:title="라디오"
+        android:icon="@drawable/radio"/>
+    <item
+        android:id="@+id/menu_library"
+        android:title="보관함"
+        android:icon="@drawable/library_music"/>
+    <item
+        android:id="@+id/menu_search"
+        android:title="검색"
+        android:icon="@drawable/search"/>
+</menu>
