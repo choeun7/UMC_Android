@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.a5thclass_3.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+    //val roomDB = AppDatabase.getInstance(this)
     private lateinit var viewBinding : ActivityMainBinding
     private lateinit var getResultText : ActivityResultLauncher<Intent>
 
@@ -19,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         viewBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(viewBinding.root)
-        val dataList : ArrayList<MemoData> = arrayListOf()
+        val dataList : ArrayList<MemoData> = arrayListOf()  //dao에서는 arraylist지원 안함
         val dataRVAdaptor = DataRVAdaptor(dataList)
         viewBinding.rvData.adapter = dataRVAdaptor
 
@@ -42,6 +43,13 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
+        dataRVAdaptor.setOnBtnClickListener(object : DataRVAdaptor.OnBtnClickListener {
+            override fun onBtnClick(view: View, data: MemoData, position: Int) {
+                dataList.removeAt(position)
+                dataRVAdaptor.notifyItemRemoved(position)
+            }
+        })
+
         //메모 추가하기 버튼 눌렀을 때 addMemoActivity로 이동
         viewBinding.addMemoBtn.setOnClickListener {
             intent = Intent(this,AddMemoActivity::class.java)
@@ -52,36 +60,37 @@ class MainActivity : AppCompatActivity() {
         getResultText = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()
         ) { result ->
-                //추가일 때
-                if(result.resultCode==receive_SAVE) {
-                    Log.d("choeunTest","Main에서 추가")
-                    Handler(mainLooper).postDelayed({
-                        dataList.apply {
-                            val mTitle = result.data?.getStringExtra("title")
-                            val mContent = result.data?.getStringExtra("content")
-                            add(MemoData(mTitle.toString(), mContent.toString()))
-                        }
-                        dataRVAdaptor.notifyItemInserted(dataRVAdaptor.itemCount)
-                    }, 100)     //0.1초 딜레이 후 추가
-                }
-                //수정일 때
-                else if(result.resultCode== receive_FIX){
-                    Log.d("choeunTest","Main에서 수정")
-                    val test = intent.getStringExtra("memo_type").toString()
-                    Log.d("choeun","$test")
-                    val mTitle = result.data?.getStringExtra("title")
-                    val mContent = result.data?.getStringExtra("content")
-                    val mPosition = result.data?.getIntExtra("position",0)
-                    dataList.apply{
-                       if(mPosition != null ) {
-                           set(mPosition, MemoData(mTitle.toString(), mContent.toString()))
-                           dataRVAdaptor.notifyItemChanged(mPosition)
-                       }
+            //추가일 때
+            if (result.resultCode == receive_SAVE) {
+                Log.d("choeunTest", "Main에서 추가")
+                Handler(mainLooper).postDelayed({
+                    dataList.apply {
+                        val mTitle = result.data?.getStringExtra("title")
+                        val mContent = result.data?.getStringExtra("content")
+                        var memo = MemoData(mTitle.toString(), mContent.toString())
+                        add(memo)
+                        Log.d("확인","insert ${mTitle}")
                     }
-
+                    dataRVAdaptor.notifyItemInserted(dataRVAdaptor.itemCount)
+                }, 100)     //0.1초 딜레이 후 추가
+            }
+            //수정일 때
+            else if (result.resultCode == receive_FIX) {
+                Log.d("choeunTest", "Main에서 수정")
+                val test = intent.getStringExtra("memo_type").toString()
+                Log.d("choeun", "$test")
+                val mTitle = result.data?.getStringExtra("title")
+                val mContent = result.data?.getStringExtra("content")
+                val mPosition = result.data?.getIntExtra("position", 0)
+                dataList.apply {
+                    if (mPosition != null) {
+                        set(mPosition, MemoData(mTitle.toString(), mContent.toString()))
+                        dataRVAdaptor.notifyItemChanged(mPosition)
+                    }
                 }
             }
         }
+    }
 
     companion object{
         const val receive_SAVE = 1001

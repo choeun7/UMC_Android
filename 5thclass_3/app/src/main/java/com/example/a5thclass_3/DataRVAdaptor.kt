@@ -19,27 +19,27 @@ class DataRVAdaptor (private val dataList : ArrayList<MemoData>) : RecyclerView.
     fun setOnItemClickListener(listener: OnItemClickListener) {
         this.listener = listener
     }
+    interface OnBtnClickListener {
+        fun onBtnClick(view : View, data : MemoData, position: Int)
+    }
+    private var btnListener : OnBtnClickListener? = null
+    fun setOnBtnClickListener(btnListener: OnBtnClickListener) {
+        this.btnListener = btnListener
+    }
 
     //ViewHolder 객체
     inner class DataViewHolder(private var viewBinding : ItemDataBinding) : RecyclerView.ViewHolder(viewBinding.root) {
 
-        fun bind(data: MemoData, position: Int) {
+        fun bind(data: MemoData, position: Int, holder: DataViewHolder) {
             viewBinding.itemTitle.text = data.title
             viewBinding.itemContent.text = data.content
 
             viewBinding.itemDeleteBtn.setOnClickListener {
-                dataList.removeAt(position)
-                notifyItemRemoved(position)
+//                dataList.removeAt(position)
+//                notifyItemRemoved(position)
+                btnListener?.onBtnClick(holder.itemView, dataList[position], position)
             }
         }
-//        init {
-//            viewBinding.item.setOnClickListener(View.OnClickListener {
-//                val pos = absoluteAdapterPosition
-//                Log.d("position", "$pos")
-//                dataList.removeAt(pos)
-//                notifyItemRemoved(pos)
-//            })
-//        }
     }
 
     //RecycleView 재사용 오류 방지 코드
@@ -55,19 +55,12 @@ class DataRVAdaptor (private val dataList : ArrayList<MemoData>) : RecyclerView.
 
     //ViewHolder가 실제로 데이터를 표시해야 할 때 호출되는 함수
     override fun onBindViewHolder(holder: DataViewHolder, position: Int) {
-        holder.bind(dataList[position], position)
-
+        holder.bind(dataList[position], position, holder)
         if(position != RecyclerView.NO_POSITION) {
             holder.itemView.setOnClickListener {
                 listener?.onItemClick(holder.itemView, dataList[position], position)
             }
         }
-//        holder.itemView.setOnClickListener {
-//            val intent = Intent(holder.itemView?.context, AddMemoActivity::class.java)
-//            intent.putExtra("title", dataList[position].title)
-//            intent.putExtra("content",dataList[position].content)
-//            ContextCompat.startActivity(holder.itemView.context, intent, null)
-//        }
     }
 
     //표현할 item의 총 개수
