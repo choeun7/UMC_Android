@@ -8,20 +8,25 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center"
         android:layout_weight="1"
-        android:background="@color/white">
+        android:background="@color/white"
+        >
 
         <ImageView
             android:id="@+id/macdonald_waiting"
             android:layout_width="180dp"
             android:layout_height="110dp"
             android:src="@drawable/macdonald_waiting"
-            android:layout_marginBottom="24dp"/>
+            android:layout_marginBottom="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="250dp"/>
 
         <ImageView
             android:id="@+id/message_button2"
@@ -29,7 +34,11 @@
             android:layout_height="25dp"
             android:layout_marginBottom="0dp"
             android:rotation="-90"
-            android:src="@drawable/triangle" />
+            android:src="@drawable/triangle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/macdonald_waiting"
+            android:layout_marginTop="20dp"/>
 
         <Button
             android:id="@+id/message_button1"
@@ -37,6 +46,11 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:text="@string/wait_please"
-            android:textColor="@color/black" />
-    </LinearLayout>
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/macdonald_waiting"
+            android:layout_marginTop="31dp"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>
