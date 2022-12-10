@@ -80,6 +80,6 @@ class MainActivity : AppCompatActivity() {
                     Log.e("Retrofit2","Error!", t)
                 }
             })
-        //https://api.odcloud.kr/api/15077586/v1/centers?perPage=10&page=1&returnType=JSON&serviceKey=HvRPOVFXKE0TTTiYY3IjEXQTpboDUr7suTcQ56YSB1QNfxZ7WDlSXUdzgLTpQkNWGbLAu4EM9Gu%2BXPVHE6WZEQ%3D%3D
+        //https://api.odcloud.kr/api/15077586/v1/centers?perPage=10&page=1&returnType=JSON&serviceKey=HvRPOVFXKE0TTTiYY3IjEXQTpboDUr7suTcQ56YSB1QNfxZ7WDlSXUdzgLTpQkNWGbLAu4EM9Gu+XPVHE6WZEQ==
     }
 }
