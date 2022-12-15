@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
                         if (responseData.code == 3001) {
                             Toast.makeText(this@MainActivity, "중복된 이메일입니다.", Toast.LENGTH_SHORT).show()
                         }
-                    } 
+                    }
                 }
                 else {
                     Log.w("Retrofit","Response Not Successful ${response.code()}")
