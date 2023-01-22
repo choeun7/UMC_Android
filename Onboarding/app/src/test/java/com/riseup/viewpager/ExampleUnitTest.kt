@@ -1,4 +1,4 @@
-package com.example.onboarding
+package com.riseup.viewpager
 
 import org.junit.Test
 
