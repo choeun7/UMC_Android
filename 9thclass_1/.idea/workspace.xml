@@ -13,23 +13,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="20dd85f8-8907-4532-ac07-c955a2f5490b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../9thclass_2/app/src/main/java/com/example/a9thclass_2/ApiService.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../9thclass_2/app/src/main/java/com/example/a9thclass_2/CenterCovidApiResponse.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../9thclass_2/app/src/main/java/com/example/a9thclass_2/CovidApiService.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../9thclass_2/app/src/main/java/com/example/a9thclass_2/CovidResponse.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../9thclass_2/app/src/main/java/com/example/a9thclass_2/Response.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../5thclass_3/app/src/main/res/layout/activity_add_memo.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../5thclass_3/app/src/main/res/layout/activity_add_memo.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../8thclass_1/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../8thclass_1/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../7thclass_3/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../7thclass_3/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/a9thclass_1/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/a9thclass_1/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OldGuardian_project2/.idea/OldGuardian_project2.iml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\ì ì´ì\.android\avd\Nexus_5X_API_29.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\choeun\.android\avd\Pixel_API_30.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -85,7 +78,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
     <property name="cidr.known.project.marker" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../9thclass_2" />
     <property name="settings.editor.selected.configurable" value="experimental" />
   </component>
   <component name="RunManager">
